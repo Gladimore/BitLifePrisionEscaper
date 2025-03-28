@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prison Escaper</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Prison Escaper</h1>
+  </header>
+  <main>
+    <section class="grid-config">
+      <form id="grid-size-form">
+        <div class="form-group">
+          <label for="grid-width">Grid Width:</label>
+          <input type="number" id="grid-width" value="6" min="3" required />
+        </div>
+        <div class="form-group">
+          <label for="grid-height">Grid Height:</label>
+          <input type="number" id="grid-height" value="6" min="3" required />
+        </div>
+        <button type="submit" class="btn">Generate Grid</button>
+      </form>
+    </section>
+    
+    <section class="grid-section">
+      <div id="grid-container"></div>
+      <button id="solve-btn" class="btn">Solve Puzzle</button>
+      <div id="solution" class="solution"></div>
+    </section>
+  </main>
+  
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="close" class="close">&times;</span>
+      <h2>Cell Configuration</h2>
+      <p id="cell-coordinates"></p>
+      <div class="walls">
+        <label><input type="checkbox" id="wall-top" /> Top</label>
+        <label><input type="checkbox" id="wall-right" /> Right</label>
+        <label><input type="checkbox" id="wall-bottom" /> Bottom</label>
+        <label><input type="checkbox" id="wall-left" /> Left</label>
+      </div>
+      <div class="cell-types">
+        <label><input type="radio" name="cell-type" id="prisoner" /> Prisoner (P)</label>
+        <label><input type="radio" name="cell-type" id="guard" /> Guard (G)</label>
+        <label><input type="radio" name="cell-type" id="exit" /> Exit</label>
+        <label><input type="radio" name="cell-type" id="none" checked /> None</label>
+      </div>
+      <button id="save" class="btn">Save</button>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
